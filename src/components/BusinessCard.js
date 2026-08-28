@@ -27,7 +27,7 @@ export function BusinessCard(business) {
           </div>
           <p class="mt-4 line-clamp-2 text-sm leading-6 text-slate-500">${escapeHtml(business.descripcion)}</p>
           <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
-            <span class="text-sm font-bold text-indigo-600">Ver mini-página</span>
+            <span class="text-sm font-bold text-indigo-600">Ver más</span>
             <span class="grid h-9 w-9 place-items-center rounded-full bg-slate-50 text-slate-600 transition group-hover:bg-indigo-50 group-hover:text-indigo-600">${icon("arrow-up-right",17)}</span>
           </div>
         </div>

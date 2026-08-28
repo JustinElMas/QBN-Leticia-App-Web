@@ -3,7 +3,7 @@ export function Footer() {
     <footer class="mt-20 border-t border-slate-200 bg-slate-950 text-slate-300">
       <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
-          <div class="text-xl font-black text-white">Directorio<span class="text-indigo-400">.</span></div>
+          <div class="text-xl font-black text-white">:D QBN Leticia<span class="text-indigo-400">.com</span></div>
           <p class="mt-3 max-w-sm text-sm leading-6 text-slate-400">Una nueva forma de descubrir negocios y conocerlos a través de mini-páginas web modernas.</p>
         </div>
         <div>
