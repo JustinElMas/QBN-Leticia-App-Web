@@ -18,6 +18,6 @@ export function Footer() {
           <p class="mt-4 text-sm leading-6 text-slate-400">Queremos trabajar juntos para llevar a Leticia en el próximo nivel en tecnología. Contactanos Hoy</p>
         </div>
       </div>
-      <div class="border-t border-white/10 px-4 py-5 text-center text-xs text-slate-500">MVP · Desarrollador por Selva TIC</div>
+      <div class="border-t border-white/10 px-4 py-5 text-center text-xs text-slate-500">MVP · Desarrollado por Selva TIC</div>
     </footer>`;
 }
