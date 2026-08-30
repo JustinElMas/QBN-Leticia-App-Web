@@ -5,7 +5,7 @@ export const promociones = [
     negocioNombre: "Barriguita y más Barriga",
     nombre: "Combo Desayuno Amazónico + Café Expreso",
     descripcion: "Delicioso desayuno tradicional acompañado de café expreso doble recién colado.",
-    imagen: "https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    imagen: "https://media-cdn.tripadvisor.com/media/photo-s/1c/bb/6a/86/desayuno-de-campo.jpg",
     precioAntes: "$19.500",
     precioAhora: "$15.000",
     descuento: "-23%",
@@ -31,7 +31,7 @@ export const promociones = [
     negocioNombre: "Pavé Express Zolly y Leo",
     nombre: "Litro de Helado Artesanal Copoazú",
     descripcion: "Sabor natural de la selva. Promoción válida solo por este fin de semana.",
-    imagen: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+    imagen: "https://media-cdn.tripadvisor.com/media/photo-s/1d/35/aa/d2/helado-en-litro-y-vaso.jpg",
     precioAntes: "$35.000",
     precioAhora: "$28.000",
     descuento: "-20%",
@@ -63,5 +63,18 @@ export const promociones = [
     descuento: "-22%",
     stock: 6,
     whatsapp: "573109876543"
-  }
+  },
+  { 
+    id: 101,
+    negocioId: 10,
+    negocioNombre: "Barriguita y más Barriga",
+    nombre: "Pizzas Personales",
+    descripcion: "Deliciosas pizzas.",
+    imagen: "https://tofuu.getjusto.com/orioneat-local/resized2/huKQpe5HZfNZcpbaJ-800-x.webp",
+    precioAntes: "$19.500",
+    precioAhora: "$15.000",
+    descuento: "-23%",
+    stock: 8,
+    whatsapp: "573001234567"
+  },
 ];

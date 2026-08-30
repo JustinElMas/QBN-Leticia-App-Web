@@ -30,5 +30,6 @@ export const categorias = [
   { id: "restaurantes", nombre: "Restaurantes y Comida", icon: "🍽️", bgColor: "#ffedd5" },
   { id: "detalles", nombre: "Detalles y Piñatería", icon: "🎁", bgColor: "#f3e8ff" },
   { id: "hoteles", nombre: "Hoteles y Hospedaje", icon: "🏨", bgColor: "#e0e7ff" },
-  { id: "iglesias", nombre: "Iglesias y Religión", icon: "⛪", bgColor: "#e0f2fe" }
+  { id: "iglesias", nombre: "Iglesias y Religión", icon: "⛪", bgColor: "#e0f2fe" },
+  { id: "droguerias", nombre: "Droguerias y Farmacias", icon: "🏥", bgColor: "#0099ff" },
 ];

@@ -11,12 +11,29 @@ import { getRoute } from "./router/router.js";
 import { negocios } from "./data/negocios.js";
 import { promocionesOnline } from './data/promocionesOnline.js';
 
+// 1. IMPORTAMOS EL GLOBAL LOADER
+import { GlobalLoader } from "./components/GlobalLoader.js"; // Ajusta la ruta a tu carpeta
+
 const app = document.querySelector("#app");
 const todosLosProductos = promocionesOnline || [];
 
 function initApp() {
-  document.querySelectorAll('[id*="loader"], [class*="loader"]').forEach(el => el.remove());
-  render();
+  // Renderizamos con loader en la carga inicial de la aplicación
+  renderWithLoader();
+}
+
+// 2. FUNCIÓN PARA MOSTRAR EL LOADER MIENTRAS RENDERIZA CADA VISTA
+function renderWithLoader() {
+  // Instanciamos e inyectamos el loader en el DOM
+  const loader = GlobalLoader();
+  document.body.appendChild(loader);
+
+  // Damos un pequeño desfase (300ms a 500ms) para que la animación sea visible y fluida
+  setTimeout(() => {
+    render();
+    // Ocultamos el loader con su animación de fade out y restauración de scroll
+    loader.hide();
+  }, 400);
 }
 
 function render() {
@@ -59,7 +76,8 @@ function render() {
 
 function navigate(url) {
   history.pushState({}, "", url);
-  render();
+  // 3. Al cambiar de ruta invocamos la versión con loader
+  renderWithLoader();
 }
 
 function bindEvents() {
@@ -96,7 +114,7 @@ function initTypewriter() {
     if (!isDeleting && charIndex === currentWord.length) {
       speed = 2000;
       isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
+    } else if (isDeleting && charIndex === 0) { // 👈 Corregido aquí (===)
       isDeleting = false;
       textIndex = (textIndex + 1) % texts.length;
       speed = 500;
@@ -106,5 +124,5 @@ function initTypewriter() {
   type();
 }
 
-window.addEventListener("popstate", render);
+window.addEventListener("popstate", renderWithLoader);
 document.addEventListener("DOMContentLoaded", initApp);

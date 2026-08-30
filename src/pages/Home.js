@@ -1,10 +1,13 @@
 import { negocios } from "../data/negocios.js";
 import { categorias } from "../data/categorias.js";
+// 1. Importamos las promociones demo locales con un alias para evitar conflictos
+import { promociones as promocionesDemo } from "../data/promociones.js"; 
 import { BusinessCard } from "../components/BusinessCard.js";
 import { CategoryCard } from "../components/CategoryCard.js";
 import { ProductPromoCard } from "../components/ProductPromoCard.js";
 import { icon } from "../utils/helpers.js";
 
+// Mantenemos la firma de la función igual por si tu enrutador la llama pasando argumentos
 export function Home(productos = []) {
   const destacados = negocios.filter(n => n.destacado);
 
@@ -14,11 +17,10 @@ export function Home(productos = []) {
   const emojiRandomIzq = emojisIzquierda[Math.floor(Math.random() * emojisIzquierda.length)];
   const emojiRandomDer = emojisDerecha[Math.floor(Math.random() * emojisDerecha.length)];
 
-  // Limitamos el carrusel de inicio para mantener rendimiento, agregando enlace directo a la vista completa
-  const productosLimitados = productos.slice(0, 15);
+  // 2. FORZAMOS el uso de los demos locales para la sección del carrusel en la Home
+  const productosLimitados = promocionesDemo.slice(0, 15);
 
   return `
-    <!-- 1. HERO / BANNER PRINCIPAL -->
     <section class="relative w-full min-h-[90vh] bg-[#2563EB] overflow-hidden flex flex-col items-center justify-center pt-20 pb-16">
       <div class="absolute top-0 left-0 w-48 sm:w-64 md:w-80 text-white transform -translate-x-10 -translate-y-10 opacity-90">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +71,6 @@ export function Home(productos = []) {
       </div>
     </section>
 
-    <!-- 2. SECCIÓN 1: VER NEGOCIOS / DESTACADOS -->
     <section class="bg-slate-50">
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="flex items-end justify-between gap-5 border-b border-gray-200 pb-5">
@@ -87,7 +88,6 @@ export function Home(productos = []) {
       </div>
     </section>
 
-    <!-- 3. SECCIÓN 2: 🔥 PRODUCTOS EN DESCUENTOS Y PROMOCIONES (CARRUSEL + BOTÓN VER MÁS) -->
     <section class="bg-amber-50/60 border-y border-amber-100/80 py-16 relative overflow-hidden">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
@@ -102,12 +102,10 @@ export function Home(productos = []) {
           </div>
           
           <div class="flex items-center gap-3">
-            <!-- Botón para ver el catálogo completo de ofertas -->
-            <a href="/descuentos" data-link class="inline-flex items-center justify-center gap-2 bg-[#d81b60] hover:bg-[#c2185b] text-white text-sm font-bold py-2.5 px-5 rounded-xl shadow-md transition-all">
+            <a href="/descuentos" data-link class="inline-flex items-center justify-center gap-2 bg-[blue] hover:bg-[green] text-white text-sm font-bold py-2.5 px-5 rounded-xl shadow-md transition-all">
               Ver Más Descuentos ➔
             </a>
 
-            <!-- Controles de navegación del carrusel -->
             <div class="hidden md:flex items-center gap-2">
               <button 
                 onclick="document.getElementById('promo-carousel').scrollBy({left: -320, behavior: 'smooth'})"
@@ -127,15 +125,16 @@ export function Home(productos = []) {
           </div>
         </div>
 
-        <!-- Contenedor Carrusel Horizontal (Limitado para fluidez) -->
         <div id="promo-carousel" class="mt-8 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 scrollbar-none scroll-smooth">
-          ${productosLimitados.length > 0 ? productosLimitados.map(ProductPromoCard).join("") : '<p class="text-slate-500 text-sm">No hay promociones disponibles por el momento.</p>'}
+          ${productosLimitados.length > 0 
+            ? productosLimitados.map(prod => ProductPromoCard(prod)).join("") 
+            : '<p class="text-slate-500 text-sm">No hay promociones disponibles por el momento.</p>'
+          }
         </div>
 
       </div>
     </section>
 
-    <!-- 4. SECCIÓN 3: CATEGORÍAS POPULARES -->
     <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="flex items-end justify-between gap-5 border-b border-gray-200 pb-5">
         <div>
@@ -151,7 +150,6 @@ export function Home(productos = []) {
       </div>
     </section>
 
-    <!-- 5. SECCIÓN 4: Contacto / Aliados -->
     <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 space-y-16">
       <div>
         <div class="text-center mb-6">

@@ -121,11 +121,19 @@ export function initDescuentosLogic(productosTotales = []) {
     return parseFloat((val || '0').replace(/[^0-9]/g, '')) || 0;
   }
 
+  // 1. NUEVA FUNCIÓN: Elimina tildes, mayúsculas y espacios extra para una coincidencia perfecta
+  function normalizarTexto(texto) {
+    return (texto || '')
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim()
+      .toLowerCase();
+  }
+
   function aplicarFiltros(textoBusqueda = null) {
     const busqueda = (textoBusqueda !== null ? textoBusqueda : inputBuscador.value).toLowerCase().trim();
     const orden = selectOrdenar.value;
 
-    // Sincronizar ambos campos de búsqueda si se escribe en uno
     if (inputBuscador.value.toLowerCase().trim() !== busqueda) inputBuscador.value = busqueda;
     if (inputBuscadorSticky && inputBuscadorSticky.value.toLowerCase().trim() !== busqueda) inputBuscadorSticky.value = busqueda;
 
@@ -198,13 +206,21 @@ export function initDescuentosLogic(productosTotales = []) {
         }
       }
 
-      const negocioAsociado = negocios.find(n => n.id === prod.negocioId) || negocios[0];
-      const nombreNegocio = negocioAsociado ? negocioAsociado.nombre : "Droguería Gloria";
+      // 2. CORRECCIÓN APLICADA: Búsqueda flexible sin tildes ni problemas de espacios
+      const nombreNegocioProd = normalizarTexto(prod.Negocio);
+      
+      const negocioAsociado = negocios.find(n => {
+        const nombreJSON = normalizarTexto(n.nombre);
+        // Verifica si son iguales o si uno contiene parte del otro por seguridad
+        return nombreJSON === nombreNegocioProd || nombreJSON.includes(nombreNegocioProd) || nombreNegocioProd.includes(nombreJSON);
+      }) || negocios[0]; 
+
+      const nombreNegocio = negocioAsociado ? negocioAsociado.nombre : (prod.Negocio || "Comercio Local");
       const urlNegocio = negocioAsociado ? `/negocio/${negocioAsociado.id}` : "/directorio";
       
       const telWssp = negocioAsociado?.whatsapp || "3144618719";
       const urlMaps = negocioAsociado?.maps || "https://maps.app.goo.gl/sptmkLFM5SNTgezF6";
-      const msgWssp = encodeURIComponent(`Hola, quisiera pedir a domicilio: ${nombre} (${precioFormateado}) ${sku ? '- SKU: '+sku : ''}`);
+      const msgWssp = encodeURIComponent(`Hola ${nombreNegocio}, quisiera pedir a domicilio: ${nombre} (${precioFormateado}) ${sku ? '- SKU: '+sku : ''}`);
       const urlWssp = `https://wa.me/${telWssp}?text=${msgWssp}`;
 
       const card = document.createElement('div');
@@ -256,7 +272,6 @@ export function initDescuentosLogic(productosTotales = []) {
     cargando = false;
   }
 
-  // Event Listeners de Buscadores (Principal y Sticky Móvil sincronizados)
   if (inputBuscador) {
     inputBuscador.addEventListener('input', (e) => aplicarFiltros(e.target.value));
   }
@@ -267,7 +282,6 @@ export function initDescuentosLogic(productosTotales = []) {
     selectOrdenar.addEventListener('change', () => aplicarFiltros());
   }
 
-  // Botones de la barra de navegación móvil inferior
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', function() {
       const orden = this.dataset.orden;
@@ -279,7 +293,6 @@ export function initDescuentosLogic(productosTotales = []) {
     });
   });
 
-  // Intersection Observer para el scroll infinito automático
   if (centinela) {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && !cargando && !finDeDatos) {
@@ -290,13 +303,10 @@ export function initDescuentosLogic(productosTotales = []) {
     observer.observe(centinela);
   }
 
-  // Comportamiento de Scroll (Barra sticky móvil y botón de subir)
   window.addEventListener('scroll', () => {
     const btnTop = document.getElementById('btnTop');
-    const btnSearchMobile = document.getElementById('btnSearchMobile');
     const scrollY = window.scrollY;
 
-    // Mostrar u ocultar botón de scroll top y botón de búsqueda rápida móvil
     if (btnTop) {
       if (scrollY > 350) {
         btnTop.style.visibility = 'visible';
@@ -307,7 +317,6 @@ export function initDescuentosLogic(productosTotales = []) {
       }
     }
 
-    // Mostrar / Ocultar la barra de búsqueda superior flotante en móvil cuando se hace scroll hacia abajo
     if (mobileSearchSticky) {
       if (scrollY > 280) {
         mobileSearchSticky.style.transform = 'translateY(0)';
@@ -317,6 +326,5 @@ export function initDescuentosLogic(productosTotales = []) {
     }
   });
 
-  // Carga inicial al montar la vista
   aplicarFiltros();
 }

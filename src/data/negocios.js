@@ -500,5 +500,47 @@ export const negocios = [
       youtube: "",
       website: "@bloomkstore_let"
     }
+  },
+    {
+    id: 12,
+    slug: "Drogueria-Gloria",
+    nombre: "Drogueria Gloria",
+    categoria: "Droguerias",
+    categoriaId: "droguerias",
+    template: "general",
+    verificado: true,
+    destacado: true,
+    rating: 5.0,
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI00FKf6svdsBM8eSJfd2VgI4picRb_DkQBbp-OG1ElEsKYVJSpT2eK4jg&s=10",
+    portada: "https://www.drogueriagloria.com/wp-content/uploads/2025/03/DG-GLORIA.png",
+    descripcion: "Droguerías Gloria encuentra medicamentos, productos populares y una gran variedad de productos en nuestros 10 puntos de venta en la ciudad ¡Te esperamos!.",
+    servicios: ["Farmacia", "Productos Populares", "Perfumeria y cosmeticos"],
+    productos: [
+      { name: "ACEITE JJ 100 ML BET TIME", price: "$15.000", image: "https://www.drogueriagloria.com/wp-content/uploads/2024/07/7702031734628-310x310.jpg", hasDelivery: true },
+    ],
+    galeria: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlX2fPB-NxZiQrIBWLTEFio4_YpQdVItS-ILijkZWXkGs_uYHYGFmX_7VW&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOel0v_0KBlnm9LW6VcmqU44R2XEuoZU743nlvlKm_J9bt7uKin4b5PS-I&s=10",
+      "https://farmacolombia.com/img/amazonas/leticia/9.jpg",
+      "https://farmacolombia.com/img/amazonas/leticia/1.jpg"
+    ],
+    contacto: {
+      telefono: "3132587678",
+      whatsapp: "573144618719",
+      email: ""
+    },
+    ubicacion: {
+      ciudad: "Leticia",
+      departamento: "Amazonas",
+      direccion: "Leticia, Amazonas",
+      mapUrl: "https://maps.app.goo.gl/ozr5Adcfi4YqrK3h8"
+    },
+    horario: {
+      Abrimos: "Lunes a sábado: 7:30 am - 12:00 pm | 2:00 pm - 6:15 pm",
+      festivos: "Domingos y festivos: 8:30 am - 12:00 pm"
+    },
+    redes: {
+      instagram: "https://www.instagram.com/drogueriagloria_leticia/"
+    }
   }
 ];

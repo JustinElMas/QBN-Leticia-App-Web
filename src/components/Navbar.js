@@ -15,7 +15,7 @@ export function Navbar() {
           <a href="#como-funciona" class="text-sm font-semibold text-slate-600 hover:text-slate-950">Cómo funciona</a>
         </nav>
         <div class="flex items-center gap-2">
-          <a href="#registrar" class="hidden rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-slate-950/10 hover:bg-indigo-700 sm:inline-flex">Registra tu negocio</a>
+          <a href="descuentos" class="hidden rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-slate-950/10 hover:bg-indigo-700 sm:inline-flex">Ver ofertas</a>
      <button id="mobile-menu-btn" class="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 text-xl font-extrabold md:hidden">
   ☰
 </button>
