@@ -1,12 +1,11 @@
 import { negocios } from "../data/negocios.js";
 import { categorias } from "../data/categorias.js";
-import { promociones } from "../data/promociones.js";
 import { BusinessCard } from "../components/BusinessCard.js";
 import { CategoryCard } from "../components/CategoryCard.js";
 import { ProductPromoCard } from "../components/ProductPromoCard.js";
 import { icon } from "../utils/helpers.js";
 
-export function Home() {
+export function Home(productos = []) {
   const destacados = negocios.filter(n => n.destacado);
 
   const emojisIzquierda = ['👨‍🔧', '👩‍🍳', '👷‍♂️', '👨‍🌾', '💇‍♀️', '👨‍🎨', '👨‍⚕️'];
@@ -14,6 +13,9 @@ export function Home() {
   
   const emojiRandomIzq = emojisIzquierda[Math.floor(Math.random() * emojisIzquierda.length)];
   const emojiRandomDer = emojisDerecha[Math.floor(Math.random() * emojisDerecha.length)];
+
+  // Limitamos el carrusel de inicio para mantener rendimiento, agregando enlace directo a la vista completa
+  const productosLimitados = productos.slice(0, 15);
 
   return `
     <!-- 1. HERO / BANNER PRINCIPAL -->
@@ -45,23 +47,23 @@ export function Home() {
           <a href="/directorio" data-link class="rounded-[2rem] bg-white px-10 py-3.5 text-base font-semibold text-[#2563EB] shadow-lg transition-transform hover:scale-105">
             Ver Negocios
           </a>
-<a href="https://wa.me/573138958098?text=Hola,%20quiero%20registrar%20mi%20negocio%20en%20el%20directorio" 
-        target="_blank" 
-   rel="noopener noreferrer" 
-   class="rounded-[2rem] border-[1.5px] border-white bg-transparent px-10 py-3.5 text-base font-semibold text-white transition-transform hover:scale-105 hover:bg-white/10 text-center inline-block">
-  Registrarme
-</a>
+          <a href="https://wa.me/573138958098?text=Hola,%20quiero%20registrar%20mi%20negocio%20en%20el%20directorio" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="rounded-[2rem] border-[1.5px] border-white bg-transparent px-10 py-3.5 text-base font-semibold text-white transition-transform hover:scale-105 hover:bg-white/10 text-center inline-block">
+            Registrarme
+          </a>
         </div>
       </div>
 
       <div class="absolute -bottom-4 left-0 sm:left-10 z-10 reveal-up delay-200 pointer-events-none">
-        <div class="hero-emoji transform rotate-12 origin-bottom-left transition-transform duration-700 hover:rotate-6">
+        <div class="hero-emoji transform rotate-12 origin-bottom-left transition-transform duration-700 hover:rotate-6 text-5xl">
           ${emojiRandomIzq}
         </div>
       </div>
       
       <div class="absolute -bottom-4 right-0 sm:right-10 z-10 reveal-up delay-400 pointer-events-none">
-        <div class="hero-emoji transform -rotate-12 origin-bottom-right transition-transform duration-700 hover:-rotate-6">
+        <div class="hero-emoji transform -rotate-12 origin-bottom-right transition-transform duration-700 hover:-rotate-6 text-5xl">
           ${emojiRandomDer}
         </div>
       </div>
@@ -85,11 +87,11 @@ export function Home() {
       </div>
     </section>
 
-    <!-- 3. SECCIÓN 2: 🔥 PRODUCTOS EN DESCUENTOS Y PROMOCIONES (CARRUSEL) -->
+    <!-- 3. SECCIÓN 2: 🔥 PRODUCTOS EN DESCUENTOS Y PROMOCIONES (CARRUSEL + BOTÓN VER MÁS) -->
     <section class="bg-amber-50/60 border-y border-amber-100/80 py-16 relative overflow-hidden">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div class="flex items-end justify-between gap-5 border-b border-amber-200/80 pb-5">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 border-b border-amber-200/80 pb-5">
           <div>
             <span class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-red-600 bg-red-100/80 px-3 py-1 rounded-full">
               ⚡ Ofertas por tiempo limitado
@@ -99,32 +101,35 @@ export function Home() {
             </h2>
           </div>
           
-          <!-- Controles de navegación del carrusel -->
-          <div class="hidden sm:flex items-center gap-2">
-            <button 
-              onclick="document.getElementById('promo-carousel').scrollBy({left: -320, behavior: 'smooth'})"
-              class="w-10 h-10 rounded-full bg-white shadow-md border border-slate-200 flex items-center justify-center text-slate-700 hover:bg-slate-50 transition-colors"
-              aria-label="Anterior"
-            >
-              ❮
-            </button>
-            <button 
-              onclick="document.getElementById('promo-carousel').scrollBy({left: 320, behavior: 'smooth'})"
-              class="w-10 h-10 rounded-full bg-white shadow-md border border-slate-200 flex items-center justify-center text-slate-700 hover:bg-slate-50 transition-colors"
-              aria-label="Siguiente"
-            >
-              ❯
-            </button>
+          <div class="flex items-center gap-3">
+            <!-- Botón para ver el catálogo completo de ofertas -->
+            <a href="/descuentos" data-link class="inline-flex items-center justify-center gap-2 bg-[#d81b60] hover:bg-[#c2185b] text-white text-sm font-bold py-2.5 px-5 rounded-xl shadow-md transition-all">
+              Ver Más Descuentos ➔
+            </a>
+
+            <!-- Controles de navegación del carrusel -->
+            <div class="hidden md:flex items-center gap-2">
+              <button 
+                onclick="document.getElementById('promo-carousel').scrollBy({left: -320, behavior: 'smooth'})"
+                class="w-10 h-10 rounded-full bg-white shadow-md border border-slate-200 flex items-center justify-center text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
+                aria-label="Anterior"
+              >
+                ❮
+              </button>
+              <button 
+                onclick="document.getElementById('promo-carousel').scrollBy({left: 320, behavior: 'smooth'})"
+                class="w-10 h-10 rounded-full bg-white shadow-md border border-slate-200 flex items-center justify-center text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer"
+                aria-label="Siguiente"
+              >
+                ❯
+              </button>
+            </div>
           </div>
         </div>
 
-        <!-- Contenedor Carrusel Horizontal -->
-        <div 
-          id="promo-carousel" 
-          class="mt-8 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 scrollbar-none scroll-smooth"
-          style="scrollbar-width: none; -ms-overflow-style: none;"
-        >
-          ${promociones.map(ProductPromoCard).join("")}
+        <!-- Contenedor Carrusel Horizontal (Limitado para fluidez) -->
+        <div id="promo-carousel" class="mt-8 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 scrollbar-none scroll-smooth">
+          ${productosLimitados.length > 0 ? productosLimitados.map(ProductPromoCard).join("") : '<p class="text-slate-500 text-sm">No hay promociones disponibles por el momento.</p>'}
         </div>
 
       </div>
@@ -146,104 +151,93 @@ export function Home() {
       </div>
     </section>
 
-    <!-- 5. SECCIÓN 4: Contacto -->
-<!-- SECCIÓN: Aliados y Canales de Contacto -->
-<section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 space-y-16">
-  
-  <!-- 1. CARRUSEL DE MARCAS ALIADAS (Ejemplo) -->
-  <div>
-    <div class="text-center mb-6">
-      <span class="text-xs font-black uppercase tracking-widest text-indigo-600">Ecosistema</span>
-      <h2 class="mt-1 text-2xl font-black text-slate-900 sm:text-3xl">Marcas que confían en nosotros</h2>
-    </div>
-
-    <!-- Carrusel deslizable -->
-    <div class="relative overflow-hidden py-2">
-      <div class="flex items-center gap-6 overflow-x-auto no-scrollbar py-3 px-2 opacity-75 grayscale transition-all hover:grayscale-0 justify-start sm:justify-center">
-        <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
-          <span>🏢</span> Selva TIC
-        </div>
-        <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
-          <span>⚡</span> Netlify
-        </div>
-        <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
-          <span>🌐</span> Name cheap
-        </div>
-        <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
-          <span>🚀</span> Programadores del Amazonas
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. TARJETAS DE ACCIÓN (Registrar / Software / Soporte) -->
-  <div class="grid gap-6 md:grid-cols-3">
-    
-    <!-- Tarjeta 1: Registrar Negocio -->
-    <div class="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl">
+    <!-- 5. SECCIÓN 4: Contacto / Aliados -->
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 space-y-16">
       <div>
-        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-2xl text-emerald-600">
-          🏪
+        <div class="text-center mb-6">
+          <span class="text-xs font-black uppercase tracking-widest text-indigo-600">Ecosistema</span>
+          <h2 class="mt-1 text-2xl font-black text-slate-900 sm:text-3xl">Marcas que confían en nosotros</h2>
         </div>
-        <h3 class="mt-5 text-xl font-black text-slate-900">Registrar un negocio</h3>
-        <p class="mt-2 text-xs text-slate-500 leading-relaxed">
-          Suma tu local o servicio al directorio y empieza a captar nuevos clientes directo en tu WhatsApp.
-        </p>
-      </div>
-      <a 
-        href="https://wa.me/573138958098?text=Hola,%20quiero%20registrar%20mi%20negocio%20en%20el%20directorio" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-5 py-3.5 text-xs font-bold text-white shadow-md shadow-emerald-500/20 transition-all hover:bg-emerald-600 active:scale-95"
-      >
-        💬 Registrar mi local
-      </a>
-    </div>
 
-    <!-- Tarjeta 2: Desarrollo de Software -->
-    <div class="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-xl">
-      <div>
-        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-2xl text-indigo-600">
-          💻
+        <div class="relative overflow-hidden py-2">
+          <div class="flex items-center gap-6 overflow-x-auto no-scrollbar py-3 px-2 opacity-75 grayscale transition-all hover:grayscale-0 justify-start sm:justify-center">
+            <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
+              <span>🏢</span> Selva TIC
+            </div>
+            <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
+              <span>⚡</span> Netlify
+            </div>
+            <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
+              <span>🌐</span> Name cheap
+            </div>
+            <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
+              <span>🚀</span> Programadores del Amazonas
+            </div>
+          </div>
         </div>
-        <h3 class="mt-5 text-xl font-black text-slate-900">Desarrollo de Software</h3>
-        <p class="mt-2 text-xs text-slate-500 leading-relaxed">
-          ¿Buscas una app web, software a medida o integrarte a nuestro equipo dev? Hablemos de tecnología.
-        </p>
       </div>
-      <a 
-        href="https://wa.me/573138958098?text=Hola,%20me%20interesa%20el%20servicio%20de%20desarrollo%20de%20software" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-indigo-600 px-5 py-3.5 text-xs font-bold text-white shadow-md shadow-indigo-600/20 transition-all hover:bg-indigo-700 active:scale-95"
-      >
-        🚀 Cotizar / Unirme
-      </a>
-    </div>
 
-    <!-- Tarjeta 3: Contacto y Soporte -->
-    <div class="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-400 hover:shadow-xl">
-      <div>
-        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-2xl text-slate-700">
-          🎧
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl">
+          <div>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-2xl text-emerald-600">
+              🏪
+            </div>
+            <h3 class="mt-5 text-xl font-black text-slate-900">Registrar un negocio</h3>
+            <p class="mt-2 text-xs text-slate-500 leading-relaxed">
+              Suma tu local o servicio al directorio y empieza a captar nuevos clientes directo en tu WhatsApp.
+            </p>
+          </div>
+          <a 
+            href="https://wa.me/573138958098?text=Hola,%20quiero%20registrar%20mi%20negocio%20en%20el%20directorio" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 px-5 py-3.5 text-xs font-bold text-white shadow-md shadow-emerald-500/20 transition-all hover:bg-emerald-600 active:scale-95"
+          >
+            💬 Registrar mi local
+          </a>
         </div>
-        <h3 class="mt-5 text-xl font-black text-slate-900">Contacto y Soporte</h3>
-        <p class="mt-2 text-xs text-slate-500 leading-relaxed">
-          ¿Tienes dudas sobre la plataforma o necesitas actualizar datos de tu tienda? Te ayudamos de inmediato.
-        </p>
+
+        <div class="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300 hover:shadow-xl">
+          <div>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-2xl text-indigo-600">
+              💻
+            </div>
+            <h3 class="mt-5 text-xl font-black text-slate-900">Desarrollo de Software</h3>
+            <p class="mt-2 text-xs text-slate-500 leading-relaxed">
+              ¿Buscas una app web, software a medida o integrarte a nuestro equipo dev? Hablemos de tecnología.
+            </p>
+          </div>
+          <a 
+            href="https://wa.me/573138958098?text=Hola,%20me%20interesa%20el%20servicio%20de%20desarrollo%20de%20software" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-indigo-600 px-5 py-3.5 text-xs font-bold text-white shadow-md shadow-indigo-600/20 transition-all hover:bg-indigo-700 active:scale-95"
+          >
+            🚀 Cotizar / Unirme
+          </a>
+        </div>
+
+        <div class="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-400 hover:shadow-xl">
+          <div>
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-2xl text-slate-700">
+              🎧
+            </div>
+            <h3 class="mt-5 text-xl font-black text-slate-900">Contacto y Soporte</h3>
+            <p class="mt-2 text-xs text-slate-500 leading-relaxed">
+              ¿Tienes dudas sobre la plataforma o necesitas actualizar datos de tu tienda? Te ayudamos de inmediato.
+            </p>
+          </div>
+          <a 
+            href="https://wa.me/573138958098?text=Hola,%20necesito%20soporte%20o%20tengo%20una%20consulta" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-5 py-3.5 text-xs font-bold text-white shadow-md transition-all hover:bg-slate-800 active:scale-95"
+          >
+            📞 Hablar con Soporte
+          </a>
+        </div>
       </div>
-      <a 
-        href="https://wa.me/573138958098?text=Hola,%20necesito%20soporte%20o%20tengo%20una%20consulta" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-5 py-3.5 text-xs font-bold text-white shadow-md transition-all hover:bg-slate-800 active:scale-95"
-      >
-        📞 Hablar con Soporte
-      </a>
-    </div>
-
-  </div>
-</section>
-
+    </section>
   `;
 }
