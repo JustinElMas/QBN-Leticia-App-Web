@@ -276,8 +276,8 @@ export const negocios = [
     verificado: true,
     destacado: true,
     rating: 4.8,
-    logo: "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/542728468_122110131764982808_4383054687675358333_n.jpg?stp=dst-jpg_tt6&cstp=mx1600x1600&ctp=s1600x1600&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=mnexMegG-bgQ7kNvwEkxPqx&_nc_oc=AdrhSVk42ADxUgKEpUQHEt_rxqSSlch_kDG-UU3NRwRNG00uplXsDAbQhGz8y5At8Gs&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=x25IGA5FM5eXPY6h9PROXg&_nc_ss=7b289&oh=00_AQEi08EmHYdRW033h8qPSDtvmSRvEzhIOs4TZ6xuGfxfzQ&oe=6A96F6E4",
-    portada: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn8Pdj3KgfIhYyKARJMeq4cqsX5FdH5_LKp8pt7aNEoPt1X2WoTCSY5qhvL8A415HaQ8O2amYadIAVfrF_9-MhR-MtYQRttLG8BAujXfmtUIL18wKavdalQJ6b-RsV1QbVf2BWvGLIHfGVu=s1360-w1360-h1020-rw",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFb9odQLGj3WbMUcyhCx8r0GA4VHq0FLxbzM0hsvTlw&s",
+    portada: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmdddneNuh-mE3bIjHnzplLVjOSqGt1Bm-hzvx4IhD452NBWKFwdQrGX8l_3psL3yVvt4b7yFHNsK3knvFWIUIqZ3hbZCQ82rHT9qE7rQUkykFRtMhKejUsTiRS8xw5IM5WTT1WfYR7HeKQ=w408-h444-k-no",
     descripcion: "Especialistas en decoraciones de cumpleaños, arreglos con globos y detalles personalizados para toda ocasión especial.",
     servicios: ["Decoraciones Cumpleaños", "Detalles para toda ocasión", "Arreglo de Globos"],
     productos: [
@@ -286,16 +286,10 @@ export const negocios = [
       { name: "Arreglo de Globos", price: "A Convenir", image: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmDbUQGn37DzU23Ajyy4dRn1zxzZXHvgau9lClejrEMOVMXXspIGtLZO8wYFJQShAN-IQewvVFBmMjTflTHYy4WA4MxiFSkp-L2bICnpNeQpEYJnJiO4L0T1ia4F0-VHS1kwGRAJVQBZpzP=s1360-w1360-h1020-rw", hasDelivery: true }
     ],
     galeria: [
-      "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn8Pdj3KgfIhYyKARJMeq4cqsX5FdH5_LKp8pt7aNEoPt1X2WoTCSY5qhvL8A415HaQ8O2amYadIAVfrF_9-MhR-MtYQRttLG8BAujXfmtUIL18wKavdalQJ6b-RsV1QbVf2BWvGLIHfGVu=s1360-w1360-h1020-rw",
-      "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmuokA7NMjZ4XrKEXbQb3yVffLQoiqUjPZk3iHitKZDcbcT0CMMwAbV_QJE_Yh4RCFhsfU4yXibikQ6IAeA0krvkTTUIQuOV7W7o7K-_A0EEIjgTRodZcVuHX4iDy4iQ4sxlHTKr8s84qyi=s1360-w1360-h1020-rw",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/586948217_122128233260982808_1755146983839524826_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=auOgJ4x9zIgQ7kNvwGqf_G8&_nc_oc=Adp-cmVhzpdRMtECkeEa9w0XJwLYGZCrRCKawOCl56GIbii_G8tbxp_Rvt_ZGxkr4Ag&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=mjH14rGWpMMGE3ryx5c69Q&_nc_ss=7b289&oh=00_AQGcADhzSf5nhIBr6nQHB_pXj58TSBLpOuN7C4d3Qm-JbQ&oe=6A96D462",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/546719420_122112873140982808_6322804073300130693_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Mc4FvsnWV6UQ7kNvwFLx8N1&_nc_oc=AdrYxxCu3GyFLHATfkiKCm7SawGyZ040mLT292vSvXaEN-QljCCR8pxbjQOE1RmUzgU&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=Q-_JTGFqY6u_lHz022Mf8A&_nc_ss=7b289&oh=00_AQGCdCLhTmrCgcIAF-OOeXAitiqfFDCJC-JRiv-AfbEJ8A&oe=6A96EBA3",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/547453956_122112685874982808_5207508074324095816_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=W5SQfu56cCgQ7kNvwEh6Waz&_nc_oc=AdoePKbjzmCSoWjI9wWb2JYzTQzfmWYkZVt97YovGjo8FnWtQwrPiZqzcGLs1fBC968&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=qfGX2p0dwIWfeh63XUfIkw&_nc_ss=7b289&oh=00_AQGLDjs7C6_xDjpkKdzwT7eIvfIKnF-9vahgiLKxr7qISg&oe=6A96DFB0",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/539827188_122107079618982808_2622675900669059520_n.jpg?stp=dst-jpg_tt6&cstp=mx1596x1126&ctp=s1596x1126&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=LOyjD6Xbg78Q7kNvwGO7z7X&_nc_oc=AdqGmqx8TRJfidPGfwq2iKRIIfKJkk1stsmeFWTOEtrhGQavDKJebJ-4mCLBYlt4cjU&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=8GWgAS0UPRhkrkg2GNtW0g&_nc_ss=7b289&oh=00_AQFVkszggQ8sYmorlhHlV60wh__sjFrLc5suCXMLXV_xuw&oe=6A96CFFD",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/545856530_122112685550982808_4311681541382002734_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=k2wQqGB0QEsQ7kNvwEZy_3D&_nc_oc=AdoG3SisjWSsc01OawbeKhBZzkF8joI7K4Z3XvFof5rdKwn2XV6KYKikPCF0aaBb9ow&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=j9WSfHsKHRUIWyioTjEg1Q&_nc_ss=7b289&oh=00_AQEbU269ZJMM5pKrM27sDre5MTZyroO75SrMCfWWkiAofQ&oe=6A96DEAC",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/540362039_122107096898982808_3025486829337640407_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=b8cEJivKv8MQ7kNvwEiF9cv&_nc_oc=AdqGQb3lGQqtuhWhxgNDsh7RGk3dQ-yBAa2sclAP-PGJXeNek4XIoso4CkKrPmEFC4k&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=nvwze-oBwzJwIIR1sfL28g&_nc_ss=7b289&oh=00_AQGK7TsLvJptEo7GfqjME4Xc7vvkSB5HbpfaCx_8Xc4nbg&oe=6A96D6C5",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/540434023_122107106636982808_7796719167669572421_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1599&ctp=s1200x1599&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=xptjdRmSkKsQ7kNvwE9U1Uu&_nc_oc=AdqUSPVScFJfGzkTZ-q2FIWnHDbuCk03f5T0ia16aYyfJnKssncvKTjqeiA401RPCX4&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=e6mB01RAxdOLIXnjGA9LkQ&_nc_ss=7b289&oh=00_AQENr9Xv1JOkhNyw0eMYFTQ1NqyPIO5g7kI9uHY4Xc_SuQ&oe=6A96F7B9",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/539888663_122107105376982808_5275678814712563098_n.jpg?stp=dst-jpg_tt6&cstp=mx1600x1344&ctp=s1600x1344&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kn6oIbprlSYQ7kNvwFytOgn&_nc_oc=AdpNXMkJLXevGjEqf0pVJRoWoCamy2mVtFylvsKnm_qnHnxpFtbZJvqegz-xdRwP84o&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=KvAFqoY20cTNx2-L47FUWg&_nc_ss=7b289&oh=00_AQFNBtQs6XjgNjkJNYsHd9-xcKrwfnlrqWv_VbhV9Y5hlw&oe=6A96D415"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2Ln8LB-ddwr5qw8PNB8QSuTw23MlzZWv7IkLsIVOqw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIB6hIjY_DEEE1PD0dJaLTCeVJ04I58h99fw9r0YtbVw&s=10",
+      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/538937195_122107102778982808_6747514311497212925_n.jpg?stp=dst-jpg_tt6&cstp=mx1333x1315&ctp=s1333x1315&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=7RWOoX-tNukQ7kNvwEXRVGe&_nc_oc=Adqt69C6DNddWLfgC37QW8kNm3scmxi7Dq_FtaPgIenYk51yppxewMeVjn13dS9Yz3A&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=tLXa9-Yuc0MWG1cwr1vROg&_nc_ss=7b289&oh=00_AQI54Zze3cVl2JAfBglw4UFG_q0828pSDRS0cmzsLsVbBA&oe=6AA54CB9",
+      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/546953716_122112682646982808_6728234035957361640_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx720x960&ctp=s720x960&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ySwCUvcrT9EQ7kNvwEXYz_q&_nc_oc=AdppS2q74JzA8mAvfvB99WTcqSbzMpHEHph463ouuNDsHV8FxoVIAdgMoVW_CmtAIS8&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=IHqN3gukWsimI4DkVpZEpA&_nc_ss=7b289&oh=00_AQJESbGjHLrCyukPzV_e6x9qFtNvfrphzrOPY2Dh4jIdeg&oe=6AA5370D"
     ],
     contacto: {
       telefono: "321 9672281",
@@ -306,7 +300,7 @@ export const negocios = [
       ciudad: "Leticia",
       departamento: "Amazonas",
       direccion: "Leticia, Amazonas",
-      mapUrl: "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d248.8595763530242!2d-69.94169431685548!3d-4.214219275865953!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1786910772148!5m2!1ses!2sco"
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d248.68794782010258!2d-69.94022235323878!3d-4.21886119733542!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1788832858395!5m2!1ses-419!2sco"
     },
     horario: {
       Abrimos: "De Domingo a Domingo de 7 am a 7 pm"
@@ -542,5 +536,77 @@ export const negocios = [
     redes: {
       instagram: "https://www.instagram.com/drogueriagloria_leticia/"
     }
-  }
+  },
+    {
+    id: 13,
+    slug: "artesanias-ngae",
+    nombre: "Artesanías y Detalles Turísticos NGAE",
+    categoria: "Artesanias",
+    categoriaId: "artesanias",
+    template: "general",
+    verificado: true,
+    destacado: true,
+    rating: 5.0,
+    logo: "../public/media/negocios_media/NGAE/LOGO_NGAE.png",
+    portada: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6iC9UpqtFtoH5st394qEPxE6Wkkcr_fsWbENPjLSapJ2JVQjgUcBLedA&s=10",
+    descripcion: "Descubre la esencia del Amazonas a través de artesanías, recuerdos y detalles elaborados con identidad y tradición. Encuentra productos únicos para llevar contigo un pedacito de nuestra cultura y regalar experiencias que perduran.",
+    servicios: ["Artesanias", "Detalles", "Abanicos", "Canastas", "Chambira", "Cultura"],
+    galeria: [
+      "../public/media/negocios_media/NGAE/Artesania_1.jpg",
+      "../public/media/negocios_media/NGAE/Artesania_Abanico.jpg",
+      "../public/media/negocios_media/NGAE/Artesania_Canastas.jpg",
+      "../public/media/negocios_media/NGAE/Artesania_Aretes.jpg",
+    ],
+    contacto: {
+      telefono: "320 8308022",
+      whatsapp: "57320 8308022",
+      email: ""
+    },
+    ubicacion: {
+      ciudad: "Leticia",
+      departamento: "Amazonas",
+      direccion: "Leticia, Amazonas",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d248.68772338918012!2d-69.93348802478089!3d-4.219562097385725!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1788835749664!5m2!1ses-419!2sco"
+    },
+    horario: {
+      Abrimos: "Lunes a sábado: 7:30 am - 12:00 pm | 2:00 pm - 6:15 pm",
+      festivos: "Domingos y festivos: 8:30 am - 12:00 pm"
+    },
+  },
+  {
+    id: 14,
+    slug: "helados-ngae",
+    nombre: "Tienda, Heladería y Purichis",
+    categoria: "Postres y Helados",
+    categoriaId: "postres",
+    template: "general",
+    verificado: true,
+    destacado: true,
+    rating: 5.0,
+    logo: "../public/media/negocios_media/NGAE/NGAE-Artesanal.png",
+    portada: "../public/media/negocios_media/NGAE/Paletas.jpg",
+    descripcion: "¡Sabor, frescura y tradición en un solo lugar! Disfruta deliciosos purichis y helados artesanales, además de productos para compartir y refrescarte. Una parada perfecta para disfrutar en familia y vivir un dulce momento. Puedes hacer tu pedido por whatsap.",
+    servicios: ["Helados", "Purichis", "Mekatos", "Vendemos en eventos", "Entregas a domicilio", "Artesanal"],
+    galeria: [
+      "../public/media/negocios_media/NGAE/Asai.jpg",
+      "../public/media/negocios_media/NGAE/Paletas.jpg",
+      "https://experienciasclub.com/wp-content/uploads/2020/10/b9c44b16-9041-4423-b664-2ebc2737d46d.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWVl9WmCoZO3oJtQL_pCpVAvzaWZMme2U20qgS4W4sfQ&s=10",
+    ],
+    contacto: {
+      telefono: "320 8308022",
+      whatsapp: "57320 8308022",
+      email: ""
+    },
+    ubicacion: {
+      ciudad: "Leticia",
+      departamento: "Amazonas",
+      direccion: "Leticia, Amazonas",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d248.68772338918012!2d-69.93348802478089!3d-4.219562097385725!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1788835749664!5m2!1ses-419!2sco"
+    },
+    horario: {
+      Abrimos: "Lunes a sábado: 7:30 am - 12:00 pm | 2:00 pm - 6:15 pm",
+      festivos: "Domingos y festivos: 8:30 am - 12:00 pm"
+    },
+  },
 ];

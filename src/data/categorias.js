@@ -32,4 +32,5 @@ export const categorias = [
   { id: "hoteles", nombre: "Hoteles y Hospedaje", icon: "🏨", bgColor: "#e0e7ff" },
   { id: "iglesias", nombre: "Iglesias y Religión", icon: "⛪", bgColor: "#e0f2fe" },
   { id: "droguerias", nombre: "Droguerias y Farmacias", icon: "🏥", bgColor: "#0099ff" },
+  { id: "artesanias", nombre: "Artesanias", icon: "🖼️", bgColor: "#caf1ff" },
 ];
