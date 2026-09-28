@@ -189,7 +189,7 @@ export const negocios = [
     destacado: true,
     rating: 4.9,
     logo: "/media/selva_tic.jpeg",
-    portada: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80",
+    portada: "https://img.magnific.com/vector-premium/ilustracion-icono-dibujos-animados-sitio-web-tienda-online-concepto-icono-tecnologia-empresarial-aislado-estilo-dibujos-animados-plana_138676-2135.jpg",
     descripcion: "Soluciones digitales para empresas, emprendimientos y personas. Impresiones, fotocopias, diseño web, automatizaciones y capacitaciones.",
     servicios: ["Fotocopias", "Impresiones", "Diseño web", "Diseño gráfico", "Automatización", "Capacitaciones"],
     productos: [
@@ -197,8 +197,12 @@ export const negocios = [
       { name: "Impresiones", price: "$500", image: "https://imgv2-2-f.scribdassets.com/img/document/785766516/original/f295a9824d/1?v=1", hasDelivery: true }
     ],
     galeria: [
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_A87LuQ5gMsATVVaOxNHeaReeFcClFl31KKGKkiRxvtrs8V6SdG8r5CN-&s=10",
+      "/media/selva_tic.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRLx6QChrUhchX2bUfPajFFmtAag583ER2C7YsfYULKNK3lMMEHQU_ZZlb&s=10",
+      "https://www.estrategiamagazine.com/wp-content/uploads/2018/08/que-es-el-wi-fi.jpg",
+      "https://store-cdn.venndelo.com/shared/image-recargas-electronicas-37173-i88243-s200x200-f1.jpg",
+      "https://i.pinimg.com/564x/0f/ce/37/0fce37256b631ad8193375dc21065bb1.jpg"
     ],
     contacto: {
       telefono: "313 8958098",
@@ -288,8 +292,8 @@ export const negocios = [
     galeria: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2Ln8LB-ddwr5qw8PNB8QSuTw23MlzZWv7IkLsIVOqw&s=10",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIB6hIjY_DEEE1PD0dJaLTCeVJ04I58h99fw9r0YtbVw&s=10",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/538937195_122107102778982808_6747514311497212925_n.jpg?stp=dst-jpg_tt6&cstp=mx1333x1315&ctp=s1333x1315&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=7RWOoX-tNukQ7kNvwEXRVGe&_nc_oc=Adqt69C6DNddWLfgC37QW8kNm3scmxi7Dq_FtaPgIenYk51yppxewMeVjn13dS9Yz3A&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=tLXa9-Yuc0MWG1cwr1vROg&_nc_ss=7b289&oh=00_AQI54Zze3cVl2JAfBglw4UFG_q0828pSDRS0cmzsLsVbBA&oe=6AA54CB9",
-      "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/546953716_122112682646982808_6728234035957361640_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx720x960&ctp=s720x960&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ySwCUvcrT9EQ7kNvwEXYz_q&_nc_oc=AdppS2q74JzA8mAvfvB99WTcqSbzMpHEHph463ouuNDsHV8FxoVIAdgMoVW_CmtAIS8&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=IHqN3gukWsimI4DkVpZEpA&_nc_ss=7b289&oh=00_AQJESbGjHLrCyukPzV_e6x9qFtNvfrphzrOPY2Dh4jIdeg&oe=6AA5370D"
+      "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QQUa7MGgzVx-FqOP7h7_cvtMgNrB24Ey6GrG4-G6XDeLPy3OEIS02ReozLRk3WFg1wJ92mV5ZWT-_HcjYIDZxXkfCpoyhtjLstZjJbJSKN1g15lngJU1ooPoQdKtok6uRTR-snZuGAiPWz=s1360-w1360-h1020-rw",
+      "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SQxR_NcGa9DOm5xAb1aTPb3N-MuXVQeEJzXCTQv9x2EOeI8dcNn8v9jAZIwKc6_bfuwzuW9k4n6hOM_r4tw6qnczZ7Kiz2zqEIAlAeNdvCAycvAosoauA3FhP1ercNp2UJoOXefo7z-fdC=s1360-w1360-h1020-rw"
     ],
     contacto: {
       telefono: "321 9672281",
@@ -324,7 +328,7 @@ export const negocios = [
     destacado: false,
     rating: 4.7,
     logo: "/media/negocios_media/hmg-2025.jpg",
-    portada: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlxHQsOzlq5azKiTWThLNv0IDPMSiEOvLxluDx4IkMTXX-wieDQ68fFWyFwBKy3UCf6soVdodv1_FXtqJwzbXdbWfSl8_6b_TaeA58E0Q5vHHAzT40_ZBhVyXRq1S0XWHQZ8Bcf=w574-h384-n-k-rw-no-v1",
+    portada: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkepSgjL-MPvPELoeKmUA4EitOgNU19F7Of0SfjznpRLSomr_QW42mbrk&s=10",
     descripcion: "Habitaciones cómodas, tranquilas y confortables con vista panorámica desde el mirador.",
     servicios: ["Habitaciones Cómodas", "Servicios de Hospedaje", "Mirador"],
     productos: [

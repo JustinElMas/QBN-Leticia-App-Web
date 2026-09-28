@@ -3,20 +3,46 @@ import { categorias } from "../data/categorias.js";
 import { renderEmptyState, renderTiendaCard } from "../components/BuscadorTiendas.js";
 
 /**
- * Función ultra-segura para filtrar y renderizar resultados
+ * Inicializa los eventos de búsqueda e interacción en la página
+ */
+export function initDirectorioEvents(currentCategoria = "") {
+  const searchInput = document.getElementById("search-input");
+  const resultsContainer = document.getElementById("directory-results");
+
+  if (!resultsContainer) return;
+
+  function update() {
+    const q = searchInput ? searchInput.value : "";
+    resultsContainer.innerHTML = renderResults(negocios, q, currentCategoria);
+  }
+
+  searchInput?.addEventListener("input", update);
+}
+
+/**
+ * Función para filtrar y renderizar las tarjetas
  */
 export function renderResults(list = [], search = "", categoria = "") {
   const q = (search || "").trim().toLowerCase();
+  const categoriaStr = String(categoria || "").trim();
 
   const results = (list || []).filter(n => {
-    // Filtro por categoría
-    const matchesCategory = !categoria || n.categoriaId === categoria;
+    // 1. Filtro por categoría
+    const matchesCategory = !categoriaStr || String(n.categoriaId || "") === categoriaStr;
 
-    // Campos de búsqueda seguros contra valores null/undefined
+    // 2. Extracción de servicios
+    let serviciosStr = "";
+    if (Array.isArray(n.servicios)) {
+      serviciosStr = n.servicios
+        .map(s => (typeof s === "object" ? s?.nombre || s?.titulo || "" : s))
+        .join(" ");
+    }
+
+    // 3. Campos de búsqueda
     const nombre = (n.nombre || "").toLowerCase();
     const catNombre = (n.categoria || "").toLowerCase();
     const desc = (n.descripcion || "").toLowerCase();
-    const servicios = Array.isArray(n.servicios) ? n.servicios.join(" ").toLowerCase() : "";
+    const servicios = serviciosStr.toLowerCase();
 
     const haystack = `${nombre} ${catNombre} ${desc} ${servicios}`;
     const matchesQuery = !q || haystack.includes(q);
@@ -32,14 +58,13 @@ export function renderResults(list = [], search = "", categoria = "") {
 }
 
 /**
- * Controlador Sticky de alta compatibilidad (Scroll event + Sentinel)
+ * Controlador del sticky bar al hacer scroll
  */
 export function initStickyFilter() {
   const filterBar = document.getElementById("sticky-filter-bar");
   if (!filterBar) return;
 
   const handleScroll = () => {
-    // Detectar cuando el scroll pasa los 120px
     const isStuck = window.scrollY > 120;
 
     if (isStuck) {
@@ -63,14 +88,32 @@ export function initStickyFilter() {
 
   window.removeEventListener("scroll", handleScroll);
   window.addEventListener("scroll", handleScroll, { passive: true });
-  handleScroll(); // Ejecución inicial
+  handleScroll();
 }
 
 /**
- * Vista de Directorio
+ * Componente principal Vista de Directorio
  */
 export function Directorio({ search = "", categoria = "" } = {}) {
   const selected = categorias.find(c => c.id === categoria);
+
+  const filterChipsHTML = categorias.map(c => {
+    const count = negocios.filter(n => n.categoriaId === c.id).length;
+    const isActive = categoria === c.id;
+    const activeClass = isActive 
+      ? 'active-chip bg-indigo-600 text-white shadow-sm' 
+      : 'bg-slate-100 text-slate-700 hover:bg-slate-200';
+
+    return `
+      <a 
+        href="/directorio?categoria=${c.id}" 
+        data-link 
+        class="filter-chip whitespace-nowrap rounded-full px-4 py-2 text-xs font-bold transition-all ${activeClass}"
+      >
+        ${c.icon || '📍'} ${c.nombre} <span class="ml-0.5 opacity-70">(${count})</span>
+      </a>
+    `;
+  }).join('');
 
   return `
     <!-- HEADER Y BUSCADOR -->
@@ -101,7 +144,7 @@ export function Directorio({ search = "", categoria = "" } = {}) {
       </div>
     </section>
 
-    <!-- BARRA DE FILTROS STICKY (sticky top-0 obligatorio en CSS) -->
+    <!-- BARRA DE FILTROS STICKY -->
     <div class="sticky top-0 z-30 w-full bg-slate-50/80 backdrop-blur-md">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div 
@@ -109,7 +152,6 @@ export function Directorio({ search = "", categoria = "" } = {}) {
           class="my-3 w-full rounded-2xl bg-white p-3.5 text-slate-800 shadow-sm transition-all duration-300"
         >
           <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
-            <!-- Botón Todos -->
             <a 
               href="/directorio" 
               data-link 
@@ -118,20 +160,7 @@ export function Directorio({ search = "", categoria = "" } = {}) {
               🏪 Todos (${negocios.length})
             </a>
 
-            <!-- Categorías -->
-            ${categorias.map(c => {
-              const count = negocios.filter(n => n.categoriaId === c.id).length;
-              const isActive = categoria === c.id;
-              return `
-                <a 
-                  href="/directorio?categoria=${c.id}" 
-                  data-link 
-                  class="filter-chip whitespace-nowrap rounded-full px-4 py-2 text-xs font-bold transition-all ${isActive ? 'active-chip bg-indigo-600 text-white shadow-sm' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}"
-                >
-                  ${c.icon || '📍'} ${c.nombre} <span class="ml-0.5 opacity-70">(${count})</span>
-                </a>
-              `;
-            }).join('')}
+            ${filterChipsHTML}
           </div>
         </div>
       </div>
@@ -139,11 +168,7 @@ export function Directorio({ search = "", categoria = "" } = {}) {
 
     <!-- GRILLA DE RESULTADOS -->
     <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      ${selected ? `
-        <div class="mb-4 text-xs font-bold text-slate-500">
-          Filtrando por: <span class="text-indigo-600">${selected.nombre}</span>
-        </div>
-      ` : ''}
+      ${selected ? `<div class="mb-4 text-xs font-bold text-slate-500">Filtrando por: <span class="text-indigo-600">${selected.nombre}</span></div>` : ''}
 
       <div id="directory-results" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         ${renderResults(negocios, search, categoria)}

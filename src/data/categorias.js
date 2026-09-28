@@ -21,6 +21,8 @@ import {
   Store
 } from "lucide-react";
  */
+
+// encuentra productos 24 Horas / Busca negocios activos por hora y por barrio 
 export const categorias = [
   { id: "repuestos", nombre: "Repuestos y Motores", icon: "🔧", bgColor: "#fef3c7" },
   { id: "belleza", nombre: "Belleza y Cuidado", icon: "✂️", bgColor: "#fce7f3" },
@@ -33,4 +35,6 @@ export const categorias = [
   { id: "iglesias", nombre: "Iglesias y Religión", icon: "⛪", bgColor: "#e0f2fe" },
   { id: "droguerias", nombre: "Droguerias y Farmacias", icon: "🏥", bgColor: "#0099ff" },
   { id: "artesanias", nombre: "Artesanias", icon: "🖼️", bgColor: "#caf1ff" },
+  { id: "arriendos", nombre: "Arriendos y Alquiler", icon: "🏠", bgColor: "#a5ff60" },
+  { id: "arriendos", nombre: "Tu Anuncio En ínea", icon: "🌐", bgColor: "#ffffff" },
 ];

@@ -2,7 +2,8 @@ import "./style.css";
 import { Navbar, initNavbar } from './components/Navbar.js';
 import { Footer } from "./components/Footer.js";
 import { Home } from "./pages/Home.js";
-import { Directorio, renderResults, initStickyFilter } from "./pages/Directorio.js";
+import { Directorio, initStickyFilter, initDirectorioEvents } from "./pages/Directorio.js";
+//import { Directorio, renderResults, initStickyFilter } from "./pages/Directorio.js";
 import { Categorias } from "./pages/Categorias.js";
 import { Negocio } from "./pages/Negocio.js";
 import { NotFound } from "./pages/NotFound.js";
@@ -17,6 +18,7 @@ import { GlobalLoader } from "./components/GlobalLoader.js"; // Ajusta la ruta a
 const app = document.querySelector("#app");
 const todosLosProductos = promocionesOnline || [];
 
+
 function initApp() {
   // Renderizamos con loader en la carga inicial de la aplicación
   renderWithLoader();
@@ -24,21 +26,30 @@ function initApp() {
 
 // 2. FUNCIÓN PARA MOSTRAR EL LOADER MIENTRAS RENDERIZA CADA VISTA
 function renderWithLoader() {
-  // Instanciamos e inyectamos el loader en el DOM
   const loader = GlobalLoader();
   document.body.appendChild(loader);
 
-  // Damos un pequeño desfase (300ms a 500ms) para que la animación sea visible y fluida
   setTimeout(() => {
-    render();
-    // Ocultamos el loader con su animación de fade out y restauración de scroll
-    loader.hide();
+    try {
+      render();
+    } catch (error) {
+      console.error("🚨 Error capturado al renderizar:", error);
+    } finally {
+      // Ocurra un error o no, SIEMPRE ocultamos el loader para evitar que se pegue
+      if (loader && typeof loader.hide === "function") {
+        loader.hide();
+      }
+    }
   }, 400);
 }
 
 function render() {
   try {
-    const { path, params } = getRoute();
+    // 1. Obtenemos las variables de la ruta asegurando valores por defecto
+    const route = getRoute() || {};
+    const path = route.path || "/";
+    const params = route.params || new URLSearchParams();
+
     let content = "";
 
     const searchParam = params.get("q") || params.get("search") || "";
@@ -65,7 +76,10 @@ function render() {
     bindEvents();
 
     if (path === "/") initTypewriter();
-    if (path === "/directorio") initStickyFilter();
+    if (path === "/directorio") {
+      initStickyFilter();
+      initDirectorioEvents(categoriaParam);
+    }
     if (path === "/descuentos") initDescuentosLogic(todosLosProductos);
 
   } catch (error) {
