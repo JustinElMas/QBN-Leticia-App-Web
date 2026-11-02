@@ -6,7 +6,7 @@ const WHATSAPP_NUMERO = "573000000000";
  */
 export function renderEmptyState(busquedaActual = "") {
   const mensajeWA = encodeURIComponent(
-    `¡Hola! Estuve buscando "${busquedaActual}" en el directorio pero no la encontré. Me gustaría solicitar añadir una nueva tienda.`
+    `¡Hola! Estuve buscando "${busquedaActual}" en el directorio QBN Leticia pero no la encontré. Me gustaría solicitar añadir una nueva tienda.`
   );
   const linkWhatsApp = `https://wa.me/${WHATSAPP_NUMERO}?text=${mensajeWA}`;
 

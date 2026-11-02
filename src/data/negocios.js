@@ -207,7 +207,7 @@ export const negocios = [
     contacto: {
       telefono: "313 8958098",
       whatsapp: "573138958098",
-      email: "hola@selvatic.example"
+      email: "selvatic72@gmail.com"
     },
     ubicacion: {
       ciudad: "Leticia",
@@ -249,8 +249,8 @@ export const negocios = [
       "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80"
     ],
     contacto: {
-      telefono: "312 554 5693",
-      whatsapp: "573125545693",
+      telefono: "3229747685",
+      whatsapp: "573229747685",
       email: ""
     },
     ubicacion: {
@@ -280,8 +280,8 @@ export const negocios = [
     verificado: true,
     destacado: true,
     rating: 4.8,
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcFb9odQLGj3WbMUcyhCx8r0GA4VHq0FLxbzM0hsvTlw&s",
-    portada: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmdddneNuh-mE3bIjHnzplLVjOSqGt1Bm-hzvx4IhD452NBWKFwdQrGX8l_3psL3yVvt4b7yFHNsK3knvFWIUIqZ3hbZCQ82rHT9qE7rQUkykFRtMhKejUsTiRS8xw5IM5WTT1WfYR7HeKQ=w408-h444-k-no",
+    logo: "/public/media/negocios_media/manantial/logo.jpg",
+    portada: "/public/media/negocios_media/manantial/banner-1.jpg",
     descripcion: "Especialistas en decoraciones de cumpleaños, arreglos con globos y detalles personalizados para toda ocasión especial.",
     servicios: ["Decoraciones Cumpleaños", "Detalles para toda ocasión", "Arreglo de Globos"],
     productos: [
@@ -292,8 +292,8 @@ export const negocios = [
     galeria: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2Ln8LB-ddwr5qw8PNB8QSuTw23MlzZWv7IkLsIVOqw&s=10",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIB6hIjY_DEEE1PD0dJaLTCeVJ04I58h99fw9r0YtbVw&s=10",
-      "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QQUa7MGgzVx-FqOP7h7_cvtMgNrB24Ey6GrG4-G6XDeLPy3OEIS02ReozLRk3WFg1wJ92mV5ZWT-_HcjYIDZxXkfCpoyhtjLstZjJbJSKN1g15lngJU1ooPoQdKtok6uRTR-snZuGAiPWz=s1360-w1360-h1020-rw",
-      "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SQxR_NcGa9DOm5xAb1aTPb3N-MuXVQeEJzXCTQv9x2EOeI8dcNn8v9jAZIwKc6_bfuwzuW9k4n6hOM_r4tw6qnczZ7Kiz2zqEIAlAeNdvCAycvAosoauA3FhP1ercNp2UJoOXefo7z-fdC=s1360-w1360-h1020-rw"
+      "/public/media/negocios_media/manantial/event-1.jpg",
+      "/public/media/negocios_media/manantial/event-2.jpg"
     ],
     contacto: {
       telefono: "321 9672281",
@@ -430,8 +430,8 @@ export const negocios = [
       "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=900&q=80"
     ],
     contacto: {
-      telefono: "3001234567",
-      whatsapp: "573001234567",
+      telefono: "3229747685",
+      whatsapp: "573229747685",
       email: ""
     },
     ubicacion: {

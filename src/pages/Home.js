@@ -166,6 +166,9 @@ export function Home(productos = []) {
               <span>⚡</span> Netlify
             </div>
             <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
+              <span>💻</span> Vercel
+            </div>
+            <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
               <span>🌐</span> Name cheap
             </div>
             <div class="flex shrink-0 items-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-6 py-3.5 shadow-sm font-bold text-slate-800 text-sm">
