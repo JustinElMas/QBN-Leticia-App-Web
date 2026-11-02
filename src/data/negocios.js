@@ -280,8 +280,8 @@ export const negocios = [
     verificado: true,
     destacado: true,
     rating: 4.8,
-    logo: "/public/media/negocios_media/manantial/logo.jpg",
-    portada: "/public/media/negocios_media/manantial/banner-1.jpg",
+    logo: "/media/negocios_media/manantial/logo.jpg",
+    portada: "/media/negocios_media/manantial/banner-1.jpg",
     descripcion: "Especialistas en decoraciones de cumpleaños, arreglos con globos y detalles personalizados para toda ocasión especial.",
     servicios: ["Decoraciones Cumpleaños", "Detalles para toda ocasión", "Arreglo de Globos"],
     productos: [
@@ -292,8 +292,8 @@ export const negocios = [
     galeria: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt2Ln8LB-ddwr5qw8PNB8QSuTw23MlzZWv7IkLsIVOqw&s=10",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIB6hIjY_DEEE1PD0dJaLTCeVJ04I58h99fw9r0YtbVw&s=10",
-      "/public/media/negocios_media/manantial/event-1.jpg",
-      "/public/media/negocios_media/manantial/event-2.jpg"
+      "/media/negocios_media/manantial/event-1.jpg",
+      "/media/negocios_media/manantial/event-2.jpg"
     ],
     contacto: {
       telefono: "321 9672281",
