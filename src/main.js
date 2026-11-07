@@ -105,6 +105,55 @@ function bindEvents() {
   });
 }
 
+// Agrega esto en tu archivo principal de JavaScript (ej. main.js o index.js donde cargues las rutas)
+document.addEventListener('click', function(e) {
+  // Abrir modal
+  if (e.target && e.target.id === 'open-comprar-modal') {
+    const modal = document.getElementById('comprar-modal');
+    const modalContent = document.getElementById('comprar-modal-content');
+    if (modal && modalContent) {
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+    }
+  }
+
+  // Cerrar modal con el botón X o al hacer clic fuera
+  if ((e.target && e.target.id === 'close-comprar-modal') || (e.target && e.target.id === 'comprar-modal')) {
+    const modal = document.getElementById('comprar-modal');
+    const modalContent = document.getElementById('comprar-modal-content');
+    if (modal && modalContent) {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+    }
+  }
+
+  // Cerrar al hacer clic en un enlace del modal
+  if (e.target.closest('#comprar-modal a[data-link]')) {
+    const modal = document.getElementById('comprar-modal');
+    const modalContent = document.getElementById('comprar-modal-content');
+    if (modal && modalContent) {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+    }
+  }
+});
+
+// Cerrar con la tecla Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('comprar-modal');
+    const modalContent = document.getElementById('comprar-modal-content');
+    if (modal && modalContent) {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+    }
+  }
+}); 
+
 function initTypewriter() {
   const target = document.getElementById("typewriter-text");
   if (!target) return;

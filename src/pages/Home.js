@@ -1,13 +1,11 @@
 import { negocios } from "../data/negocios.js";
 import { categorias } from "../data/categorias.js";
-// 1. Importamos las promociones demo locales con un alias para evitar conflictos
 import { promociones as promocionesDemo } from "../data/promociones.js"; 
 import { BusinessCard } from "../components/BusinessCard.js";
 import { CategoryCard } from "../components/CategoryCard.js";
 import { ProductPromoCard } from "../components/ProductPromoCard.js";
 import { icon } from "../utils/helpers.js";
 
-// Mantenemos la firma de la función igual por si tu enrutador la llama pasando argumentos
 export function Home(productos = []) {
   const destacados = negocios.filter(n => n.destacado);
 
@@ -17,7 +15,6 @@ export function Home(productos = []) {
   const emojiRandomIzq = emojisIzquierda[Math.floor(Math.random() * emojisIzquierda.length)];
   const emojiRandomDer = emojisDerecha[Math.floor(Math.random() * emojisDerecha.length)];
 
-  // 2. FORZAMOS el uso de los demos locales para la sección del carrusel en la Home
   const productosLimitados = promocionesDemo.slice(0, 15);
 
   return `
@@ -46,14 +43,16 @@ export function Home(productos = []) {
         </p>
         
         <div class="mt-10 flex flex-wrap items-center justify-center gap-5">
-          <a href="/directorio" data-link class="rounded-[2rem] bg-white px-10 py-3.5 text-base font-semibold text-[#2563EB] shadow-lg transition-transform hover:scale-105">
-            Ver Negocios
-          </a>
+          <!-- Botón que activa el Modal -->
+          <button id="open-comprar-modal" class="rounded-[2rem] bg-white px-10 py-3.5 text-base font-semibold text-[#2563EB] shadow-lg transition-transform hover:scale-105 cursor-pointer">
+            Quiero Comprar
+          </button>
+          
           <a href="https://wa.me/573138958098?text=Hola,%20quiero%20registrar%20mi%20negocio%20en%20el%20directorio" 
              target="_blank" 
              rel="noopener noreferrer" 
              class="rounded-[2rem] border-[1.5px] border-white bg-transparent px-10 py-3.5 text-base font-semibold text-white transition-transform hover:scale-105 hover:bg-white/10 text-center inline-block">
-            Registrarme
+            Quiero Vender
           </a>
         </div>
       </div>
@@ -70,6 +69,113 @@ export function Home(productos = []) {
         </div>
       </div>
     </section>
+
+    <!-- MODAL DE OPCIONES DE COMPRA -->
+    <div id="comprar-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+      <div id="comprar-modal-content" class="relative w-full max-w-md sm:max-w-lg bg-amber-400 rounded-3xl shadow-2xl border-4 border-amber-300 p-6 sm:p-8 transform scale-95 transition-transform duration-300">
+        
+        <!-- Botón Cerrar -->
+        <button id="close-comprar-modal" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-amber-500/80 text-white font-bold flex items-center justify-center hover:bg-amber-600 transition-colors shadow-md cursor-pointer">
+          ✕
+        </button>
+
+        <!-- Título -->
+        <div class="text-center mb-6 pr-6">
+          <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight [text-shadow:_0_0_1px_rgba(15,23,42,0.8)]"> 
+              ¿CÓMO DESEAS COMPRAR? 
+          </h3>
+          <div class="w-16 h-1 bg-slate-900/20 mx-auto mt-2 rounded-full"></div>
+        </div>
+
+        <!-- Opciones / Botones Links -->
+        <div class="flex flex-col gap-3">
+          <a href="/directorio" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
+            <span class="flex items-center gap-3 text-base">
+              <span class="text-xl">🛵</span> Pedir Domicilio
+            </span>
+            <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
+          </a>
+
+          <a href="/directorio?categoria=cajita" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
+            <span class="flex items-center gap-3 text-base">
+              <span class="text-xl">📦</span> Pedir Una Cajita <span class="text-red-500 text-xl">💖</span>
+            </span>
+            <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
+          </a>
+
+          <a href="/directorio" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
+            <span class="flex items-center gap-3 text-base">
+              <span class="text-xl">🏪</span> Ver Tiendas
+            </span>
+            <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
+          </a>
+
+          <a href="/descuentos" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
+            <span class="flex items-center gap-3 text-base">
+              <span class="text-xl">🏷️</span> Ver Descuentos
+            </span>
+            <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
+          </a>
+
+          <a href="/descuentos" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
+            <span class="flex items-center gap-3 text-base">
+              <span class="text-xl">🎁</span> Ver Gratis
+            </span>
+            <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
+          </a>
+
+          <a href="/descuentos" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
+            <span class="flex items-center gap-3 text-base">
+              <span class="text-xl">🔥</span> Ver Tops <span class="text-amber-600 text-xl">🔥</span>
+            </span>
+            <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Script de control del Modal -->
+    <script>
+      (function() {
+        const openBtn = document.getElementById('open-comprar-modal');
+        const closeBtn = document.getElementById('close-comprar-modal');
+        const modal = document.getElementById('comprar-modal');
+        const modalContent = document.getElementById('comprar-modal-content');
+
+        function openModal() {
+          if (!modal) return;
+          modal.classList.remove('opacity-0', 'pointer-events-none');
+          modalContent.classList.remove('scale-95');
+          modalContent.classList.add('scale-100');
+        }
+
+        function closeModal() {
+          if (!modal) return;
+          modal.classList.add('opacity-0', 'pointer-events-none');
+          modalContent.classList.remove('scale-100');
+          modalContent.classList.add('scale-95');
+        }
+
+        if (openBtn) openBtn.addEventListener('click', openModal);
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+        if (modal) {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+          });
+        }
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeModal();
+        });
+
+        // Cerrar modal al hacer clic en cualquier opción con data-link
+        modal?.querySelectorAll('a[data-link]').forEach(link => {
+          link.addEventListener('click', closeModal);
+        });
+      })();
+    </script>
 
     <section class="bg-slate-50">
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

@@ -613,4 +613,40 @@ export const negocios = [
       festivos: "Domingos y festivos: 8:30 am - 12:00 pm"
     },
   },
+  {
+    id: 15,
+    slug: "exito-bogota",
+    nombre: "Almacenes Éxito",
+    categoria: "Supermercados y Almacenes",
+    categoriaId: "cajita",
+    template: "general",
+    verificado: true,
+    destacado: true,
+    rating: 4.9,
+    logo: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Almacenes_exito_logo.svg/1280px-Almacenes_exito_logo.svg.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail",
+    portada: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Exito_Colombia.jpg/330px-Exito_Colombia.jpg?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+    descripcion: "¡Todo lo que necesitas al mejor precio! Encuentra gran variedad de víveres, abarrotes, productos para el hogar, tecnología, moda y mucho más. Calidad garantizada y facilidad para tus compras diarias. ¡Pide fácil y recibe en casa!",
+    servicios: ["Supermercado", "Electrodomésticos", "Moda y Hogar", "Entregas a domicilio", "Pagos con tarjeta", "Mercado por WhatsApp"],
+    galeria: [
+      "https://img.lalr.co/cms/2021/05/11132745/Grupo-%C3%89xito.jpg?size=xl",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8FL_LYYhvohH9mP_mC7k4HbPDL8BnfrO93c6GvHVIdmfiEVX1NqxnETtA&s=10",
+      "https://images.unsplash.com/photo-1534723452862-4c874018d66d?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&q=80&w=800",
+    ],
+    contacto: {
+      telefono: "310 1234567",
+      whatsapp: "573101234567",
+      email: "servicioalcliente@exito-demo.com"
+    },
+    ubicacion: {
+      ciudad: "Bogota",
+      departamento: "Cundinamarca",
+      direccion: "Zona Comercial, Bogota, Cundinamarca",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d248.68772338918012!2d-69.93348802478089!3d-4.219562097385725!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sco!4v1788835749664!5m2!1ses-419!2sco"
+    },
+    horario: {
+      Abrimos: "Lunes a sábado: 8:00 am - 8:00 pm",
+      festivos: "Domingos y festivos: 9:00 am - 6:00 pm"
+    },
+  },
 ];
