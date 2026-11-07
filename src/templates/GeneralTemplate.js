@@ -29,7 +29,9 @@ export function baseTemplate(business, aboutTitle = "Sobre nosotros") {
           <div class="flex flex-wrap gap-3 border-t border-white/10 bg-slate-950 p-5 sm:px-10">
             <a href="${whatsappUrl(business.contacto.whatsapp)}" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-sm font-black text-white hover:bg-emerald-400">${icon("message-circle",18)} WhatsApp</a>
             <a href="tel:${business.contacto.telefono}" class="inline-flex items-center gap-2 rounded-xl bg-white/10 px-5 py-3 text-sm font-black text-white hover:bg-white/15">${icon("phone",17)} Llamar</a>
-            <button data-share="${business.nombre}" class="share-btn inline-flex items-center gap-2 rounded-xl bg-white/10 px-5 py-3 text-sm font-black text-white hover:bg-white/15">${icon("share-2",17)} Compartir</button>
+<button data-share="${business.nombre}" class="share-btn inline-flex items-center gap-2 rounded-xl border border-black bg-yellow-400 px-5 py-3 text-sm font-black text-black transition-all duration-200 hover:bg-yellow-500 hover:scale-105 active:scale-95">
+  ${icon("share-2",17)}Pedir Domicilio
+</button>
           </div>
         </div>
 
