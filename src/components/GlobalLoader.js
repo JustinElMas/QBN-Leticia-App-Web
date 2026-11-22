@@ -1,5 +1,5 @@
 // 👇 Importa la imagen directamente como módulo de JS/Vite
-import logoNavidad from "../assets/qbn-navidad.png";
+const logoNavidad = "/media/qbn-Navidad.png";
 
 export function GlobalLoader() {
   // Evitar duplicados si se llama rápidamente
