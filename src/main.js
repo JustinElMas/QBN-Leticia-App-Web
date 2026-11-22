@@ -29,18 +29,17 @@ function renderWithLoader() {
   const loader = GlobalLoader();
   document.body.appendChild(loader);
 
-  setTimeout(() => {
+setTimeout(() => {
     try {
       render();
     } catch (error) {
       console.error("🚨 Error capturado al renderizar:", error);
     } finally {
-      // Ocurra un error o no, SIEMPRE ocultamos el loader para evitar que se pegue
       if (loader && typeof loader.hide === "function") {
         loader.hide();
       }
     }
-  }, 400);
+  }, 2000);// Duración de 2.5 segundos (entre 2 y 3 segundos)
 }
 
 function render() {

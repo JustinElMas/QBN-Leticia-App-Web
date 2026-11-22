@@ -103,6 +103,13 @@ export function Home(productos = []) {
             <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
           </a>
 
+          <a href="/descuentos" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
+            <span class="flex items-center gap-3 text-base">
+              <span class="text-xl">🎅🏼</span> Ver Descuentos Navideños <span class="text-amber-600 text-xl">🌲</span>
+            </span>
+            <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
+          </a>
+
           <a href="/directorio" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
             <span class="flex items-center gap-3 text-base">
               <span class="text-xl">🏪</span> Ver Tiendas
@@ -126,7 +133,7 @@ export function Home(productos = []) {
 
           <a href="/descuentos" data-link class="group flex items-center justify-between bg-white hover:bg-amber-50 text-slate-900 font-bold px-5 py-3.5 rounded-2xl shadow-md transition-all duration-200 hover:scale-[1.02] hover:shadow-lg border border-amber-200/50">
             <span class="flex items-center gap-3 text-base">
-              <span class="text-xl">🔥</span> Ver Tops <span class="text-amber-600 text-xl">🔥</span>
+              <span class="text-xl">🔥</span> Ver Emprendimientos Tops <span class="text-amber-600 text-xl">🔥</span>
             </span>
             <span class="text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-1 transition-all">➔</span>
           </a>

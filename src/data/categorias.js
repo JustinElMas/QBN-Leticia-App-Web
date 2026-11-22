@@ -51,4 +51,7 @@ export const categorias = [
   { id: "estudios", nombre: "Estudios y Bibliotecas", icon: "📚", bgColor: "#f3f3" },
   { id: "sinteticas", nombre: "Canchas Deportivas", icon: "⚽", bgColor: "#f2f32f" },
   { id: "belleza", nombre: "Salones de Belleza", icon: "💅", bgColor: "#f3f3f3" },
+  { id: "turismo", nombre: "Atracciones Turisticas", icon: "🧗🏼‍♀️", bgColor: "#ffffff" },
+  { id: "agenciasViaje", nombre: "Agencias de Viajes y Turismo", icon: "🧳", bgColor: "#25ff50" },
+  { id: "distribuidoras", nombre: "Distruiboras y Almacens", icon: "🛍️", bgColor: "#ffa556" },
 ];
