@@ -1,5 +1,5 @@
 // 👇 COLOCA AQUÍ LA RUTA DE TU IMAGEN
-const LOGO_SRC = "./media/qbn Navidad.png";
+const LOGO_SRC = "../media/qbn Navidad.png";
 
 export function GlobalLoader() {
   // Evitar duplicados si se llama rápidamente
