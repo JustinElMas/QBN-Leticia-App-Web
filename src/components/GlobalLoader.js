@@ -1,4 +1,3 @@
-// 👇 COLOCA AQUÍ LA RUTA DE TU IMAGEN
 // 👇 Importa la imagen directamente como módulo de JS/Vite
 import logoNavidad from "../assets/qbn-navidad.png";
 
@@ -22,13 +21,13 @@ export function GlobalLoader() {
       <!-- Contenedor de tu imagen con giro rápido + pulso hacia arriba -->
       <div class="logo-img-wrapper">
         <img 
-          src="${LOGO_SRC}" 
+          src="${logoNavidad}" 
           alt="Logo QBN Navidad" 
           class="christmas-logo-img spin-forward"
         />
       </div>
 
-<!-- Texto con fuente Outfit weight 500 y puntos suaves -->
+      <!-- Texto con fuente Outfit weight 500 y puntos suaves -->
       <div class="loader-copy">
         <h2 class="loader-headline-outfit">
           <span class="headline-top">"En esta <span class="navidad-word">NAVIDAD</span>,</span>
