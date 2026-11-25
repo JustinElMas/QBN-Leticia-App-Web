@@ -238,7 +238,7 @@ export const negocios = [
     destacado: false,
     rating: 4.6,
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Ir3jFjkzBq4Ia895DPR_LSVTinDyZUd2Pz_kHp5xiHtfUtwBDcZp3Wot&s=10",
-    portada: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=80",
+    portada: "https://res.cloudinary.com/ff1icofb/image/upload/f_auto/q_auto/portada.jpg",
     descripcion: "Pizzas recién horneadas artesanales en presentaciones personales y familiares con servicio a domicilio.",
     servicios: ["Pizzas Personales", "Pizzas Familiares", "Domicilios"],
     productos: [
@@ -418,16 +418,23 @@ export const negocios = [
     destacado: true,
     rating: 4.8,
     logo: "/media/negocios_media/raul-pizzas.jpeg",
-    portada: "https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80",
-    descripcion: "Lo mejor en comida rápida, desayunos amazónicos tradicionales, café expreso doble y sándwiches gourmet.",
-    servicios: ["Desayuno Amazónico", "Café Expreso Doble", "Sándwich de Pollo"],
+    portada: "https://res.cloudinary.com/ff1icofb/image/upload/f_auto/q_auto/barriguita.jpg",
+    descripcion: "🍔🍕 ¡En Barriguita y Más Barriga comen más y ahorran más! Disfruta las mejores hamburguesas, pizzas y hot dogs con nuestras súper promos familiares. ¡Pide tu combo favorito ahora por QBN y recíbelo caliente en casa! 🌭🔥.",
+    servicios: ["Hamburguesas", "Perro Calientes", "Sándwich de Pollo", "Pizzas", "Combos Familiares"],
     productos: [
       { name: "Desayuno Amazónico", price: "$15.000", image: "https://images.unsplash.com/photo-1493770348161-369560ae357d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=60", hasDelivery: true },
       { name: "Café Expreso Doble", price: "$4.500", image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=60", hasDelivery: false },
       { name: "Sándwich de Pollo", price: "$12.000", image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=60", hasDelivery: true }
     ],
     galeria: [
-      "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&w=900&q=80"
+      "https://res.cloudinary.com/ff1icofb/image/upload/v1795585601/raul_2.jpg",
+      "https://res.cloudinary.com/ff1icofb/image/upload/v1795585597/raul_3.jpg",
+      "https://res.cloudinary.com/ff1icofb/image/upload/v1795585591/raul_4.jpg",
+      "https://res.cloudinary.com/ff1icofb/image/upload/v1795585588/raul_5.jpg",
+      "https://res.cloudinary.com/ff1icofb/image/upload/v1795585583/raul_6.jpg",
+      "https://res.cloudinary.com/ff1icofb/image/upload/v1795585571/raul_7.jpg",
+      "https://res.cloudinary.com/ff1icofb/image/upload/v1795585224/barriguita.jpg",
+      "https://res.cloudinary.com/ff1icofb/image/upload/v1795585084/portada.jpg"
     ],
     contacto: {
       telefono: "3229747685",
@@ -438,7 +445,7 @@ export const negocios = [
       ciudad: "Leticia",
       departamento: "Amazonas",
       direccion: "Zona Centro, Leticia",
-      mapUrl: ""
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.9908345201648!2d-69.9414214!3d-4.2220477999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91f2f1001e55db1d%3A0x1d3baa7d1143b655!2sBarrio%20porvenir!5e0!3m2!1ses-419!2sco!4v1795584447184!5m2!1ses-419!2sco"
     },
     horario: {
       Abrimos: "Lunes a domingo: 7:00 AM - 10:00 PM"
@@ -648,5 +655,88 @@ export const negocios = [
       Abrimos: "Lunes a sábado: 8:00 am - 8:00 pm",
       festivos: "Domingos y festivos: 9:00 am - 6:00 pm"
     },
+  },
+  {
+    "id": 16,
+    "slug": "mau-boutique",
+    "nombre": "Mau Stilo Boutique",
+    "categoria": "Boutique & Ropa",
+    "categoriaId": "ropa",
+    "template": "general",
+    "verificado": true,
+    "destacado": false,
+    "rating": 5,
+    "logo": "https://res.cloudinary.com/ff1icofb/image/upload/f_auto,q_auto/mau-stilos",
+    "portada": "https://res.cloudinary.com/ff1icofb/image/upload/f_auto,q_auto/mau-stilos",
+    "descripcion": "✨ ¡Renueva tu estilo sin salir de casa! Encuentra las últimas tendencias en ropa, accesorios y moda exclusivos en nuestra boutique. Calidad, estilo único y atención personalizada. 👗👜 ¡Explora nuestro catálogo y haz tu pedido hoy mismo!",
+    "servicios": [
+      "Entregas a Domicilios",
+      "Abiertos los Créditos",
+      "Facilidad de Pago",
+      "Cátalogo en PDF",
+      "Ropa y Accesorios Para Dama"
+    ],
+    "galeria": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo-exL7CRx6NSRiLEzLt1mmxpJv5Cs41bVlFffsFj3yxyPQm2pODHdGLw&s=10",
+      "https://images.unsplash.com/photo-1714143136372-ddaf8b606da7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0_RDoLYHQdBd4p5N9q23mLtwNz3UTgyxxbmVE8qsSbNbQQ8-GZ7TGJxA&s=10",
+      "https://img.magnific.com/foto-gratis/bodegon-dia-mujer-maquillaje-joyas_23-2149263158.jpg?semt=ais_hybrid&w=740&q=80"
+    ],
+    "contacto": {
+      "telefono": "314 2816521",
+      "whatsapp": "573142816521",
+      "email": "maustilo@gmail.com"
+    },
+    "ubicacion": {
+      "ciudad": "Leticia",
+      "departamento": "Amazonas",
+      "direccion": "Barrio Porvenir",
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.9908345201648!2d-69.9414214!3d-4.2220477999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91f2f1001e55db1d%3A0x1d3baa7d1143b655!2sBarrio%20porvenir!5e0!3m2!1ses-419!2sco!4v1795584447184!5m2!1ses-419!2sco"
+    },
+    "horario": {
+      "Abrimos": "Lunes a sábado: 8:00 am - 8:00 pm",
+      "festivos": "Domingos y festivos: 9:00 am - 6:00 pm"
+    }
+  },
+  {
+  "id": 17,
+  "slug": "flores-limpiapipas-lz",
+  "nombre": "Floristeria Limpiapipas L & Z",
+  "categoria": "Floristerias",
+  "categoriaId": "floristeria",
+  "template": "general",
+  "verificado": true,
+  "destacado": true,
+  "rating": 5,
+  "logo": "https://res.cloudinary.com/ff1icofb/image/upload/v1795586152/zolly_3.png",
+  "portada": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi-5VT7haIQ_R_t6HoJ-zv-PNG5XIh0-mScqy9lmikSET9DRLx-wY-btIC&s=10",
+  "descripcion": "✨💐 ¡Regala algo único que nunca se marchita! Flores artesanales elaboradas en limpiapipas con textura suave tipo peluche. Diseños lindos, coloridos y hechos con amor para sorprender a esa persona especial. 🧸🌸 ¡Encuéntranos y pide ya en QBN! 🛍️",
+  "servicios": [
+    "Flores",
+    "Detalles",
+    "Regalos con Mucho Amor",
+    "Pedidos y a Domicilios y Entrega Sorpresas"
+  ],
+  "galeria": [
+    "https://res.cloudinary.com/ff1icofb/image/upload/v1795586138/zolly_1.png",
+    "https://res.cloudinary.com/ff1icofb/image/upload/v1795586147/zolly_4.png",
+    "https://res.cloudinary.com/ff1icofb/image/upload/v1795586142/zolly_2.png",
+    "https://res.cloudinary.com/ff1icofb/image/upload/v1795586152/zolly_3.png"
+  ],
+  "contacto": {
+    "telefono": "322 9038141",
+    "whatsapp": "57322 9038141",
+    "email": "floreslimpiapipaslz@gmail.com"
+  },
+  "ubicacion": {
+    "ciudad": "Leticia",
+    "departamento": "Amazonas",
+    "direccion": "Barrio Colombia",
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d574.6529121015377!2d-69.93386313723187!3d-4.2192403615318845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91f2f14c36488fbf%3A0xd9b14597a7c636c0!2sLeticia%2C%20Amazonas!5e0!3m2!1ses-419!2sco!4v1795586357380!5m2!1ses-419!2sco"
+  },
+  "horario": {
+    "Abrimos": "Lunes a sábado: 8:00 am - 8:00 pm",
+    "festivos": "Domingos y festivos: 9:00 am - 6:00 pm"
+  }
   },
 ];

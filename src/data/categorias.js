@@ -25,6 +25,7 @@ import {
 // encuentra productos 24 Horas / Busca negocios activos por hora y por barrio 
 export const categorias = [
   { id: "repuestos", nombre: "Repuestos y Motores", icon: "🔧", bgColor: "#fef3c7" },
+  { id: "ropa", nombre: "Boutique & Ropa", icon: "👗", bgColor: "#ff97ea" },
   { id: "belleza", nombre: "Belleza y Cuidado", icon: "✂️", bgColor: "#fce7f3" },
   { id: "postres", nombre: "Postres y Helados", icon: "🍰", bgColor: "#ffe4e6" },
   { id: "tiendas", nombre: "Tiendas y Abastos", icon: "🛍️", bgColor: "#d1fae5" },

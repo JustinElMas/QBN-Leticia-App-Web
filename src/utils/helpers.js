@@ -9,6 +9,6 @@ export const icon = (name, size = 18, cls = "") =>
 export const getBusinessBySlug = (businesses, slug) =>
   businesses.find((business) => business.slug === slug);
 
-export const whatsappUrl = (number, message = "Hola, vi tu negocio en el directorio.") =>
+export const whatsappUrl = (number, message = "Hola, vi tu negocio en el directorio :D Vengo de QBN Leticia.") =>
   `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 
